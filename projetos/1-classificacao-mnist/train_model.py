@@ -90,17 +90,6 @@ history = model.fit(
 )
 
 score = model.evaluate(x_test, y_test)
-print( '\nAcurácia final:{}'.format(score[0], score[1]))
-
-# Índice aleatório do set para validação
-image_index = 2236
-
-prediction = model.predict(x_test[image_index].reshape(1, 28, 28, 1))
-print("\nO valor predito é: ", prediction.argmax())
-
-image_index = 2222
-
-prediction = model.predict(x_test[image_index].reshape(1, 28, 28, 1))
-print("\nO valor predito é: ", prediction.argmax())
+print('\nAcurácia final:{}'.format(score[1]))
 
 model.save("model.h5", save_format="h5")
